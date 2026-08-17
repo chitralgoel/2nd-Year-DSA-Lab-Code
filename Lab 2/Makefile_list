@@ -1,0 +1,27 @@
+CC = gcc
+CFLAGS = -Wall
+
+all: rect_test ordered_list_rect
+
+# ---- Step 1: standalone rectangle module test ----
+rect_test: client_rect.o rect.o
+	$(CC) client_rect.o rect.o -o rect_test.exe
+
+client_rect.o: client_rect.c rect.h
+	$(CC) $(CFLAGS) -c client_rect.c
+
+# ---- Step 2: ordered list of rectangles ----
+ordered_list_rect: client.o list.o rect.o
+	$(CC) client.o list.o rect.o -o ordered_list_rect.exe
+
+client.o: client.c list.h rect.h
+	$(CC) $(CFLAGS) -c client.c
+
+list.o: list.c list.h rect.h
+	$(CC) $(CFLAGS) -c list.c
+
+rect.o: rect.c rect.h
+	$(CC) $(CFLAGS) -c rect.c
+
+clean:
+	rm -f *.o rect_test.exe ordered_list_rect.exe
