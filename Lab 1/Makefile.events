@@ -1,0 +1,24 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c11
+
+OBJS = date.o event.o eventlist.o main.o
+
+all: eventapp
+
+eventapp: $(OBJS)
+    $(CC) $(CFLAGS) -o eventapp $(OBJS)
+
+date.o: date.c date.h
+	$(CC) $(CFLAGS) -c date.c
+
+event.o: event.c event.h date.h
+	$(CC) $(CFLAGS) -c event.c
+
+eventlist.o: eventlist.c eventlist.h event.h date.h
+	$(CC) $(CFLAGS) -c eventlist.c
+
+main.o: main.c eventlist.h event.h date.h
+	$(CC) $(CFLAGS) -c main.c
+
+clean:
+	rm -f *.o eventapp
