@@ -1,0 +1,12 @@
+Enter first polynomial:
+Number of terms: Coefficient Exponent: Coefficient Exponent: Coefficient Exponent: Enter second polynomial:
+Number of terms: Coefficient Exponent: Coefficient Exponent: 
+Polynomial 1: 5x^3 - 2x^2 + 7
+Polynomial 2: 3x^2 + 4x
+Sum         : 5x^3 + x^2 + 4x + 7
+
+Enter the polynomial to integrate:
+Number of terms: Coefficient Exponent: Coefficient Exponent: Enter lower limit: Enter upper limit: 
+Polynomial           : 3x^2 + 2x
+Integrated Polynomial: x^3 + x^2
+Definite integral from 0.00 to 2.00 = 12.0000
